@@ -2,11 +2,19 @@ var connection = require('./connection.js');
 
 var orm = {
 	//query functions
+	returnBurgers: function(callback){
+		var s = "SELECT * from burgers";
+		connection.query(s, function(err, result){
+			console.log(result);
+			callback(result);
+		});
+	},
 
-	addBurger: function(burger_name){
+	addBurger: function(burger_name, callback){
 		var a = "INSERT into burgers (burger_name, devoured) VALUES ('" + burger_name + "', FALSE);";
 		connection.query(a, function(err, result){
 			console.log(result);
+			callback(result);
 		});
 	},
 

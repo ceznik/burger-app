@@ -1,0 +1,19 @@
+<header>Bite Me Burger App</header>
+<h3>Enter your favorite burgers, then devour them</h3>
+
+<div>
+	{{#each burgers}}
+		<div>
+			<pre>{{this.burger_name}}</pre><span class="button"><button>Devour It!</button></span>
+		</div>
+	{{/each}}
+</div>
+<br>
+<br>
+<div>
+	<form method="POST" action="/update?_method=PUT" class="button-size">
+		<textarea class="form-control" type="text" name="burger_add"></textarea>
+		<button type="submit">Add it!</button>
+	</form>
+	<p> Add a burger name to the list then click submit.</p>
+</div>
