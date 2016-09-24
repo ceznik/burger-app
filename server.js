@@ -29,11 +29,12 @@ app.get('/', function(req, res){
 	});
 });
 
-app.post('/submit', function(req, res){
+app.put('/update', function(req, res){
 	console.log('adding a burger');
-	orm.addBurger(req.body, function(data){
+	console.log(req.body);
+	orm.addBurger(req.body.burger_add, function(data){
 	});
-})
+});
 
 
 
